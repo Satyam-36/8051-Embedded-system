@@ -1,0 +1,107 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    02/21/2024  22:28:32  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\7segment.obj TO .\Objects\7segment PRINT (.\Listings\7segment.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\7segment.obj (7SEGMENT)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+
+
+LINK MAP OF MODULE:  .\Objects\7segment (7SEGMENT)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000AH     UNIT         _DATA_GROUP_
+            IDATA   0012H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    08F6H     0031H     UNIT         ?PR?MAIN?7SEGMENT
+            CODE    0927H     0026H     UNIT         ?PR?_DELAY_MS?7SEGMENT
+            CODE    094DH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0959H     000AH     UNIT         ?CO?7SEGMENT
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\7segment (7SEGMENT)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?7SEGMENT
+
+?PR?MAIN?7SEGMENT              0008H    000AH
+  +--> ?CO?7SEGMENT
+  +--> ?PR?_DELAY_MS?7SEGMENT
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\7segment (7SEGMENT)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        7SEGMENT
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  02/21/2024  22:28:32  PAGE 2
+
+
+  C:08F6H         PUBLIC        main
+  C:0959H         SYMBOL        _?ix1000
+  C:0927H         PUBLIC        _delay_ms
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0927H         LINE#         3
+  C:0927H         LINE#         4
+  C:0927H         LINE#         6
+  C:0937H         LINE#         7
+  C:094CH         LINE#         8
+  -------         ENDPROC       _DELAY_MS
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        num
+  D:0082H         SYMBOL        c
+  -------         ENDDO         
+  C:08F6H         LINE#         10
+  C:08F6H         LINE#         11
+  C:08F6H         LINE#         12
+  C:0909H         LINE#         14
+  C:0909H         LINE#         15
+  C:0909H         LINE#         16
+  C:090CH         LINE#         17
+  C:090CH         LINE#         18
+  C:0915H         LINE#         19
+  C:091CH         LINE#         20
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        7SEGMENT
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0061H BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=19.0 xdata=0 code=358
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
