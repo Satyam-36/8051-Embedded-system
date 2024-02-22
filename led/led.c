@@ -1,20 +1,30 @@
 #include<reg51.h>
 
-delay_ms(int time)
+void delay(unsigned int count)
 {
-	int i,j;
-	for(i=0;i<time;i++)
-	for(j=0;j<1275;j++);
+  unsigned int i;
+	while(count)
+	{
+		i=115;
+		while(i>0)
+		{
+			i--;
+			count--;
+		}
+	}
 }
 
 void main()
 {
+
+	
 	while(1)
 	{
-		P2=1;
-		delay_ms(100);
-		P2=0;
-		delay_ms(100);
+      P2=0x00;
+			delay(1000);
+      P2=0x07;
+			delay(1000);
+
 		
 	}
 }
