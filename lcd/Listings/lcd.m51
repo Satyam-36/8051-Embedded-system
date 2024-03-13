@@ -1,0 +1,148 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/07/2011  05:08:37  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\lcd.obj TO .\Objects\lcd PRINT (.\Listings\lcd.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\lcd.obj (LCD)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\lcd (LCD)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     003EH     UNIT         ?PR?MAIN?LCD
+            CODE    083EH     0027H     UNIT         ?PR?_DELAY?LCD
+            CODE    0865H     0012H     UNIT         ?PR?_LCDCMD?LCD
+            CODE    0877H     0012H     UNIT         ?PR?_LCDDATA?LCD
+            CODE    0889H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\lcd (LCD)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?LCD
+
+?PR?MAIN?LCD
+  +--> ?PR?_DELAY?LCD
+  +--> ?PR?_LCDDATA?LCD
+
+?PR?_DELAY?LCD
+  +--> ?PR?_LCDCMD?LCD
+
+?PR?_LCDDATA?LCD
+  +--> ?PR?_DELAY?LCD
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\lcd (LCD)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/07/2011  05:08:37  PAGE 2
+
+
+
+  -------         MODULE        LCD
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0845H         PUBLIC        _delay
+  C:0800H         PUBLIC        main
+  C:0877H         PUBLIC        _lcddata
+  B:00B0H.6       PUBLIC        e
+  B:00B0H.0       PUBLIC        rs
+  B:00B0H.1       PUBLIC        rw
+  C:0865H         PUBLIC        _lcdcmd
+  C:083EH         SYMBOL        L?0014
+  -------         PROC          L?0013
+  -------         ENDPROC       L?0013
+  C:083EH         SYMBOL        L?0014
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        msec
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0845H         LINE#         9
+  C:0845H         LINE#         10
+  C:0845H         LINE#         12
+  C:084FH         LINE#         13
+  C:0864H         LINE#         14
+  -------         ENDPROC       _DELAY
+  -------         PROC          _LCDCMD
+  D:0007H         SYMBOL        item
+  C:0865H         LINE#         16
+  C:0865H         LINE#         17
+  C:0865H         LINE#         18
+  C:0867H         LINE#         19
+  C:0869H         LINE#         20
+  C:086BH         LINE#         21
+  C:086DH         LINE#         22
+  C:0874H         LINE#         23
+  C:0876H         LINE#         24
+  -------         ENDPROC       _LCDCMD
+  -------         PROC          _LCDDATA
+  D:0007H         SYMBOL        item
+  C:0877H         LINE#         26
+  C:0877H         LINE#         27
+  C:0877H         LINE#         28
+  C:0879H         LINE#         29
+  C:087BH         LINE#         30
+  C:087DH         LINE#         31
+  C:087FH         LINE#         32
+  C:0886H         LINE#         33
+  C:0888H         LINE#         34
+  -------         ENDPROC       _LCDDATA
+  -------         PROC          MAIN
+  C:0800H         LINE#         37
+  C:0800H         LINE#         38
+  C:0800H         LINE#         39
+  C:0802H         LINE#         40
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/07/2011  05:08:37  PAGE 3
+
+
+  C:0805H         LINE#         41
+  C:0807H         LINE#         42
+  C:080AH         LINE#         43
+  C:080CH         LINE#         44
+  C:080FH         LINE#         45
+  C:0811H         LINE#         46
+  C:0814H         LINE#         47
+  C:0816H         LINE#         48
+  C:0819H         LINE#         49
+  C:081EH         LINE#         50
+  C:0823H         LINE#         51
+  C:0828H         LINE#         52
+  C:082DH         LINE#         53
+  C:0832H         LINE#         54
+  C:0837H         LINE#         55
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LCD
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0089H BYTE ( 6%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=152
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
